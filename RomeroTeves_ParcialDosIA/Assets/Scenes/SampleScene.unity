@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 16837399}
   m_Layer: 0
-  m_Name: Waypoints
+  m_Name: Nodes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,17 +153,17 @@ Transform:
   m_Children:
   - {fileID: 582518978}
   - {fileID: 1730556263}
+  - {fileID: 292197950}
   - {fileID: 1181074485}
   - {fileID: 1114566965}
-  - {fileID: 292197950}
   - {fileID: 1901725458}
   - {fileID: 1725717104}
   - {fileID: 1271071383}
   - {fileID: 875208537}
-  - {fileID: 72513654}
   - {fileID: 1110303731}
-  - {fileID: 452767063}
+  - {fileID: 72513654}
   - {fileID: 867204889}
+  - {fileID: 452767063}
   - {fileID: 904817385}
   - {fileID: 963390640}
   - {fileID: 1646881178}
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 72513654}
   m_Layer: 0
-  m_Name: Way (9)
+  m_Name: Node_10
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 16837399}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &292197949
 GameObject:
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292197950}
   m_Layer: 0
-  m_Name: Way (4)
+  m_Name: Node_2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -230,7 +230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 16837399}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &304555867
 GameObject:
@@ -291,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452767063}
   m_Layer: 0
-  m_Name: Way (11)
+  m_Name: Node_12
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -310,7 +310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 16837399}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575574031
 GameObject:
@@ -419,7 +419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582518978}
   m_Layer: 0
-  m_Name: Way
+  m_Name: Node
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -837,7 +837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 867204889}
   m_Layer: 0
-  m_Name: Way (12)
+  m_Name: Node_11
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -856,7 +856,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 16837399}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875208536
 GameObject:
@@ -868,7 +868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875208537}
   m_Layer: 0
-  m_Name: Way (8)
+  m_Name: Node_8
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -996,7 +996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 904817385}
   m_Layer: 0
-  m_Name: Way (13)
+  m_Name: Node_13
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1501,7 +1501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963390640}
   m_Layer: 0
-  m_Name: Way (14)
+  m_Name: Node_14
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1712,7 +1712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1110303731}
   m_Layer: 0
-  m_Name: Way (10)
+  m_Name: Node_9
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1731,7 +1731,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 16837399}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1114566964
 GameObject:
@@ -1743,7 +1743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1114566965}
   m_Layer: 0
-  m_Name: Way (3)
+  m_Name: Node_4
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1762,7 +1762,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 16837399}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1181074484
 GameObject:
@@ -1774,7 +1774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181074485}
   m_Layer: 0
-  m_Name: Way (2)
+  m_Name: Node_3
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1793,7 +1793,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 16837399}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222862243
 GameObject:
@@ -1999,7 +1999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1271071383}
   m_Layer: 0
-  m_Name: Way (7)
+  m_Name: Node_7
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2674,7 +2674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646881178}
   m_Layer: 0
-  m_Name: Way (15)
+  m_Name: Node_15
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2996,7 +2996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725717104}
   m_Layer: 0
-  m_Name: Way (6)
+  m_Name: Node_6
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3027,7 +3027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1730556263}
   m_Layer: 0
-  m_Name: Way (1)
+  m_Name: Node_1
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3252,7 +3252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901725458}
   m_Layer: 0
-  m_Name: Way (5)
+  m_Name: Node_5
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
