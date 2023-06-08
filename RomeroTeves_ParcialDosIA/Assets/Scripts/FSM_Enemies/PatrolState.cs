@@ -18,10 +18,12 @@ public class PatrolState : States
 
     public override void Update()
     {
-        if (InLOS(_enemy.transform.position, _enemy.patrolNodes[_enemy.currentPatrolNode].position))
-        {
+        if(_enemy.InFOV(_enemy.player.transform.position))
+            fsm.ChangeState(EnemyStates.Persuit);
+
+        else if (_enemy.InLOS(_enemy.transform.position, _enemy.patrolNodes[_enemy.currentPatrolNode].position))
             WaypointsMove();
-        }
+
         else
         {
             Debug.Log("No se encontro un Nodo"); //hacer A*
@@ -41,13 +43,6 @@ public class PatrolState : States
         _enemy.transform.forward = _enemy.VELOCITY;
     }
 
-    bool InLOS(Vector3 start, Vector3 end)
-    {
-        Vector3 dir = end - start;
-        return !Physics.Raycast(start, dir, dir.magnitude, _enemy.wallMask);
-    }
-
     public override void OnExit()
-    {
-    }
+    { }
 }
