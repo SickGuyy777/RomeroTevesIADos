@@ -5,6 +5,7 @@ using UnityEngine;
 public class PersuitState : States
 {
     EnemyController _enemy;
+    Vector3 _lastPlayerPos;
 
     public PersuitState(EnemyController enemy)
     {
@@ -14,6 +15,9 @@ public class PersuitState : States
     public override void OnEnter()
     {
         Debug.Log("Enemy persuit");
+
+        _lastPlayerPos = _enemy.player.transform.position;
+        Debug.Log("Se vio al jugador por ultima vez en: " + _lastPlayerPos);
     }
 
     public override void Update()

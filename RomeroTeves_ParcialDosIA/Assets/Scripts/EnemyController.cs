@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour
     Node _start;
     Node _goal;
 
+    public bool _persuit;
+    bool _alert;
+
     [HideInInspector]
     public int currentPatrolNode;
 
@@ -70,6 +73,7 @@ public class EnemyController : MonoBehaviour
         if (dir.magnitude > _viewRange) return false;
         if (Vector3.Angle(transform.forward, dir) > _viewAngle / 2) return false;
         if (!InLOS(transform.position, endPos)) return false;
+
         return true;
     }
 

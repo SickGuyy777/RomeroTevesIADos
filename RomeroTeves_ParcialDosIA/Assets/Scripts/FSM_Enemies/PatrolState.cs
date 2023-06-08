@@ -18,8 +18,11 @@ public class PatrolState : States
 
     public override void Update()
     {
-        if(_enemy.InFOV(_enemy.player.transform.position))
+        if (_enemy.InFOV(_enemy.player.transform.position))
+        {
+            _enemy._persuit = true;
             fsm.ChangeState(EnemyStates.Persuit);
+        }
 
         else if (_enemy.InLOS(_enemy.transform.position, _enemy.patrolNodes[_enemy.currentPatrolNode].position))
             WaypointsMove();
