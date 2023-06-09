@@ -8,7 +8,6 @@ public class EnemyController : MonoBehaviour
     Vector3 _velocity;
     Pathfinding _pf = new Pathfinding();
     List<Vector3> _path = new List<Vector3>();
-
     Node _start;
     Node _goal;
 
@@ -49,7 +48,12 @@ public class EnemyController : MonoBehaviour
         _fsm.Update();
     }
 
-
+    //esto lo estoy haciendo en base a lo del profe
+    List<Vector3> GetPathBasedOnPFType()//esto hace el A* pero desde el pathfinding
+    {
+        return _pf.AStar(_start, _goal);
+    }
+    //hasta aca de ultima se borra
     public Vector3 Seek(Vector3 targetPos)
     {
         Vector3 desired = (targetPos - transform.position).normalized * _maxSpeed;
@@ -134,6 +138,11 @@ public class EnemyController : MonoBehaviour
             Gizmos.DrawWireSphere(patrolNodes[currentPatrolNode].position, nodeRadius);
         }
     }
+
+    //comentario de mi suposicion de lo que nos falta por hacer:
+    //-tenemos que tener un startingNode y GoalNode dentro del enemycontroler y que estos se seten en base a lo que necesitemos en este caso starting node seria el nodo mas
+    //cercano al enemy y el goal node seria el nodo al que queremos llegar (no se aun como se podria hacer aun)
+    //-una vez tengamos eso lo que tenemos que hacer es cual es el starting node
 }
 
 public enum EnemyStates

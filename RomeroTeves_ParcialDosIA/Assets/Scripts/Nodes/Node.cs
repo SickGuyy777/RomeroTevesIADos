@@ -5,7 +5,10 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
     [SerializeField] List<Node> _neighborNode = new List<Node>();
-
+    //esto lo saque de la clase del profe
+    int _cost = 1;
+    public int Cost { get { return _cost; } }
+    //hasta aca
     public float distanceMagnitude;
     public LayerMask nodeMask;
     public LayerMask wallMask;
