@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -645,6 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _persuit: 0
+  _alert: 0
   currentPatrolNode: 0
   _maxSpeed: 4
   _maxForce: 0.06
@@ -963,6 +965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _persuit: 0
+  _alert: 0
   currentPatrolNode: 0
   _maxSpeed: 4
   _maxForce: 0.06
@@ -980,6 +984,51 @@ MonoBehaviour:
   nodeRadius: 0.5
   enemyNextNodeColor: {r: 0.8745099, g: 0.87843144, b: 0.8705883, a: 1}
   player: {fileID: 1465696483}
+--- !u!1 &837403196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837403197}
+  - component: {fileID: 837403198}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &837403197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837403196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837403198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837403196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d57d53c47224e047b3d1a9ed1052af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hunters: []
 --- !u!1 &867204888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _persuit: 0
+  _alert: 0
   currentPatrolNode: 0
   _maxSpeed: 4
   _maxForce: 0.06
@@ -2754,6 +2805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _persuit: 0
+  _alert: 0
   currentPatrolNode: 0
   _maxSpeed: 4
   _maxForce: 0.06

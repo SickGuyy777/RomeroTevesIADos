@@ -13,8 +13,7 @@ public class EnemyController : MonoBehaviour
     Node _goal;
 
     public bool _persuit;
-    bool _alert;
-
+    public bool _alert;
     [HideInInspector]
     public int currentPatrolNode;
 
@@ -36,6 +35,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.AddHuntter(this);
         _fsm = new FiniteStateMachine();
         _fsm.AddState(EnemyStates.Patrol, new PatrolState(this));
         _fsm.AddState(EnemyStates.Persuit, new PersuitState(this));
@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
     {
         _fsm.Update();
     }
+
 
     public Vector3 Seek(Vector3 targetPos)
     {
