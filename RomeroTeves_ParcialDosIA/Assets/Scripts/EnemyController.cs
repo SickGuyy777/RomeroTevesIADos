@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
         _fsm.Update();
     }
 
-    //esto lo saque de mi code del parcial anterior
+    //Posible Modificacion
     //public Vector3 SteeringCalculate(Vector3 Desired)
     //{
     //    return Vector3.ClampMagnitude(Desired.normalized * MAXSPEED - _velocity, MAXSPEED);
@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
     //        _velocity = _velocity.normalized * MAXSPEED;
     //    }
     //}
-    //esto lo estoy haciendo en base a lo del profe
+
     List<Vector3> GetPathBasedOnPFType()//esto hace el A* pero desde el pathfinding
     {
         return _pf.AStar(_start, _goal);
@@ -95,25 +95,25 @@ public class EnemyController : MonoBehaviour
         return true;
     }
 
-    //Intento de A* en el #region
+    ////Intento de A* en el #region
 
-    #region
-    void CheckerUpdate()
-    {
-        _path = _pf.BreadthFirstSearch(_start, _goal);
+    //#region
+    //void CheckerUpdate()
+    //{
+    //    _path = _pf.BreadthFirstSearch(_start, _goal);
 
-        if(_path.Count > 0)
-        {
-            TravelTo();
-        }
-    }
+    //    if(_path.Count > 0)
+    //    {
+    //        TravelTo();
+    //    }
+    //}
 
-    void TravelTo()
-    {
-        Vector3 dir = _path[0] - transform.position;
-        transform.position += dir.normalized * _maxSpeed * Time.deltaTime;
-    }
-    #endregion
+    //void TravelTo()
+    //{
+    //    Vector3 dir = _path[0] - transform.position;
+    //    transform.position += dir.normalized * _maxSpeed * Time.deltaTime;
+    //}
+    //#endregion
 
     Vector3 GetAngleFromDir(float angleInDegree)
     {
@@ -151,11 +151,6 @@ public class EnemyController : MonoBehaviour
             Gizmos.DrawWireSphere(patrolNodes[currentPatrolNode].position, nodeRadius);
         }
     }
-
-    //comentario de mi suposicion de lo que nos falta por hacer:
-    //-tenemos que tener un startingNode y GoalNode dentro del enemycontroler y que estos se seten en base a lo que necesitemos en este caso starting node seria el nodo mas
-    //cercano al enemy y el goal node seria el nodo al que queremos llegar (no se aun como se podria hacer aun)
-    //-una vez tengamos eso lo que tenemos que hacer es cual es el starting node
 }
 
 public enum EnemyStates

@@ -170,6 +170,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &26772355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26772357}
+  - component: {fileID: 26772356}
+  m_Layer: 0
+  m_Name: graph
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &26772356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26772355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b679008db876074aa5dca874e5cc157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeX: 0
+  _sizeY: 0
+--- !u!4 &26772357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26772355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &72513653
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72513653}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: 0.38, z: 2.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -218,13 +264,10 @@ MonoBehaviour:
   - {fileID: 1110303732}
   - {fileID: 1271071384}
   - {fileID: 452767064}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &292197949
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +292,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292197949}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0.38, z: 5.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -273,13 +316,10 @@ MonoBehaviour:
   - {fileID: 1730556264}
   - {fileID: 1181074486}
   - {fileID: 1901725459}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &304555867
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +393,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452767062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: 0.38, z: -4.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -376,13 +416,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 72513655}
   - {fileID: 867204890}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &575574031
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +541,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582518977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9, y: 0.38, z: 9.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -527,13 +564,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 1730556264}
   - {fileID: 1114566966}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &680450899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1095,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867204888}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14, y: 0.38, z: -4.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1084,13 +1118,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 1110303732}
   - {fileID: 452767064}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &875208536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875208536}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14, y: 0.38, z: 10.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1138,13 +1169,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 1271071384}
   - {fileID: 1110303732}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &894769133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,7 +1294,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904817384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5, y: 0.38, z: -3.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1289,13 +1317,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 452767064}
   - {fileID: 963390641}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &905290110
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1854,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963390639}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9, y: 0.38, z: -3.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1852,13 +1877,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 904817386}
   - {fileID: 1646881179}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1021201062
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,7 +2085,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110303730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14, y: 0.38, z: 2.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2087,13 +2109,10 @@ MonoBehaviour:
   - {fileID: 875208538}
   - {fileID: 72513655}
   - {fileID: 867204890}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1114566964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,13 +2160,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 1181074486}
   - {fileID: 582518979}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1181074484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,7 +2188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181074484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0.38, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2195,13 +2211,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 292197951}
   - {fileID: 1114566966}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1222862243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,7 +2433,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271071382}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: 0.38, z: 10.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2444,13 +2457,10 @@ MonoBehaviour:
   - {fileID: 1725717105}
   - {fileID: 875208538}
   - {fileID: 72513655}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1453285295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,7 +3162,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646881177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9, y: 0.38, z: -8.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3174,13 +3184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _neighborNode:
   - {fileID: 963390641}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1667538795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,7 +3503,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725717103}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.5, y: 0.38, z: 10.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3519,13 +3526,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 1901725459}
   - {fileID: 1271071384}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1730556262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,7 +3554,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730556262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0.38, z: 9.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3573,13 +3577,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 292197951}
   - {fileID: 582518979}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1816950968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3798,7 +3799,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901725457}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.5, y: 0.38, z: 5.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3821,13 +3822,10 @@ MonoBehaviour:
   _neighborNode:
   - {fileID: 292197951}
   - {fileID: 1725717105}
-  distanceMagnitude: 0
-  nodeMask:
-    serializedVersion: 2
-    m_Bits: 0
+  _graph: {fileID: 26772356}
   wallMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1915717997
 GameObject:
   m_ObjectHideFlags: 0

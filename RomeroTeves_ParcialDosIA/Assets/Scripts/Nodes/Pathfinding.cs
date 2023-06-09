@@ -42,7 +42,7 @@ public class Pathfinding
         path.Reverse();
         return path;
     }
-    //sacado del profe
+    //Posible Modificacion
     public List<Vector3> AStar(Node start, Node goal)
     {
         PriorityQueue<Node> frontier = new PriorityQueue<Node>();
@@ -60,7 +60,7 @@ public class Pathfinding
         {
             current = frontier.Dequeue();
 
-            if (current == goal) break; //terminamos de chequear, creamos el camino mas abajo
+            if (current == goal) break;
 
             foreach (var next in current.GetNeighbors())
             {
@@ -90,8 +90,6 @@ public class Pathfinding
             path.Add(current.transform.position);
             current = cameFrom[current];
         }
-        //path.Add(current.transform.position) //Opcional: Si queremos agregar el primero
-        //path.Reverse(); //Opcional
         return path;
     }
 
