@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 72513655}
   m_Layer: 0
   m_Name: Node_10
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 292197951}
   m_Layer: 0
   m_Name: Node_2
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 452767064}
   m_Layer: 0
   m_Name: Node_12
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 582518979}
   m_Layer: 0
   m_Name: Node
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,6 +645,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Friends:
+  - {fileID: 817801823}
+  - {fileID: 1538483445}
+  - {fileID: 934415993}
   _persuit: 0
   _alert: 0
   currentPatrolNode: 0
@@ -965,6 +969,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Friends:
+  - {fileID: 1538483445}
+  - {fileID: 680450904}
+  - {fileID: 934415993}
   _persuit: 0
   _alert: 0
   currentPatrolNode: 0
@@ -1028,7 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d57d53c47224e047b3d1a9ed1052af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hunters: []
+  Player: []
 --- !u!1 &867204888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1049,7 @@ GameObject:
   - component: {fileID: 867204890}
   m_Layer: 0
   m_Name: Node_11
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1095,7 +1103,7 @@ GameObject:
   - component: {fileID: 875208538}
   m_Layer: 0
   m_Name: Node_8
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1246,7 +1254,7 @@ GameObject:
   - component: {fileID: 904817386}
   m_Layer: 0
   m_Name: Node_13
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1593,6 +1601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Friends:
+  - {fileID: 817801823}
+  - {fileID: 1538483445}
+  - {fileID: 680450904}
   _persuit: 0
   _alert: 0
   currentPatrolNode: 0
@@ -1805,7 +1817,7 @@ GameObject:
   - component: {fileID: 963390641}
   m_Layer: 0
   m_Name: Node_14
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2039,7 +2051,7 @@ GameObject:
   - component: {fileID: 1110303732}
   m_Layer: 0
   m_Name: Node_9
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2094,7 +2106,7 @@ GameObject:
   - component: {fileID: 1114566966}
   m_Layer: 0
   m_Name: Node_4
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2148,7 +2160,7 @@ GameObject:
   - component: {fileID: 1181074486}
   m_Layer: 0
   m_Name: Node_3
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2396,7 +2408,7 @@ GameObject:
   - component: {fileID: 1271071384}
   m_Layer: 0
   m_Name: Node_7
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2805,6 +2817,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee32309dcd844e04188d7e4e521b9e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Friends:
+  - {fileID: 817801823}
+  - {fileID: 680450904}
+  - {fileID: 934415993}
   _persuit: 0
   _alert: 0
   currentPatrolNode: 0
@@ -3124,7 +3140,7 @@ GameObject:
   - component: {fileID: 1646881179}
   m_Layer: 0
   m_Name: Node_15
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3468,7 +3484,7 @@ GameObject:
   - component: {fileID: 1725717105}
   m_Layer: 0
   m_Name: Node_6
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3522,7 +3538,7 @@ GameObject:
   - component: {fileID: 1730556264}
   m_Layer: 0
   m_Name: Node_1
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3770,7 +3786,7 @@ GameObject:
   - component: {fileID: 1901725459}
   m_Layer: 0
   m_Name: Node_5
-  m_TagString: Untagged
+  m_TagString: Nodo
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

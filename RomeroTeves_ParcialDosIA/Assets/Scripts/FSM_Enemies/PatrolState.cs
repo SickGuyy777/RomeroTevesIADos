@@ -35,6 +35,10 @@ public class PatrolState : States
 
     void WaypointsMove()
     {
+        foreach (var item in _enemy.Friends)
+        {
+            item._alert = false;
+        }
         _enemy.AddForce(_enemy.Seek(_enemy.patrolNodes[_enemy.currentPatrolNode].position));
         if (Vector3.Distance(_enemy.patrolNodes[_enemy.currentPatrolNode].position, _enemy.transform.position) <= _enemy.nodeRadius)
             _enemy.currentPatrolNode++;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public List<EnemyController> Hunters = new List<EnemyController>();
+    public List<PlayerMovement> Player = new List<PlayerMovement>();
     private void Awake()
     {
         if (Instance == null)
@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddHuntter(EnemyController Hunt)
+    public void AddHuntter(PlayerMovement Pl)
     {
-        if (!Hunters.Contains(Hunt))
+        if (!Player.Contains(Pl))
         {
-            Hunters.Add(Hunt);
+            Player.Add(Pl);
         }
     }
 }

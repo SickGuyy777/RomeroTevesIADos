@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public List<EnemyController> Friends= new List<EnemyController>();
     FiniteStateMachine _fsm;
     Vector3 _velocity;
     Pathfinding _pf = new Pathfinding();
@@ -34,7 +35,6 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.AddHuntter(this);
         _fsm = new FiniteStateMachine();
         _fsm.AddState(EnemyStates.Patrol, new PatrolState(this));
         _fsm.AddState(EnemyStates.Persuit, new PersuitState(this));
@@ -48,6 +48,19 @@ public class EnemyController : MonoBehaviour
         _fsm.Update();
     }
 
+    //esto lo saque de mi code del parcial anterior
+    //public Vector3 SteeringCalculate(Vector3 Desired)
+    //{
+    //    return Vector3.ClampMagnitude(Desired.normalized * MAXSPEED - _velocity, MAXSPEED);
+    //}
+    //public void MyForce(Vector3 force)
+    //{
+    //    _velocity += force;
+    //    if (_velocity.magnitude >= MAXSPEED)
+    //    {
+    //        _velocity = _velocity.normalized * MAXSPEED;
+    //    }
+    //}
     //esto lo estoy haciendo en base a lo del profe
     List<Vector3> GetPathBasedOnPFType()//esto hace el A* pero desde el pathfinding
     {
