@@ -42,6 +42,8 @@ public class Pathfinding
         path.Reverse();
         return path;
     }
+    //hay que ver q hacemos con el A* en el foreach
+    #region A* 
     //Posible Modificacion
     public List<Vector3> AStar(Node start, Node goal)
     {
@@ -92,7 +94,7 @@ public class Pathfinding
         }
         return path;
     }
-
+    #endregion
     float Heuristic(Vector3 start, Vector3 end)
     {
         return Vector3.Distance(start, end);

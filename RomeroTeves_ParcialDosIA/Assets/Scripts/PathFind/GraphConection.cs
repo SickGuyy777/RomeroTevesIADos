@@ -10,6 +10,7 @@ public class GraphConection : MonoBehaviour
     public List<Node> GetNeighborsAtPosition(int x, int y)
     {
         List<Node> neighbors = new List<Node>();
+        Debug.Log("se conecto" + _grid);
         if (x + 1 < _sizeX) neighbors.Add(_grid[x + y * _sizeX + 1]);
         if (y - 1 >= 0) neighbors.Add(_grid[x + (y - 1) * _sizeX]);
         if (x - 1 >= 0) neighbors.Add(_grid[x - 1 + y * _sizeX]);

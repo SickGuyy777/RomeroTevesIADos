@@ -13,17 +13,6 @@ public class Node : MonoBehaviour
     //hasta aca
     public LayerMask wallMask;
 
-    public void Initialize(GraphConection grid, int x, int y)
-    {
-        _graph = grid;
-        coordenadas = new Coordinates(x, y);
-        SetCost(1);
-    }
-    void SetCost(int cost)
-    {
-        _cost = cost < 1 ? 1 : cost;
-        if (cost == 6) _cost = 5;
-    }
     public List<Node> GetNeighbors()
     {
         if (_neighborNode.Count == 0)

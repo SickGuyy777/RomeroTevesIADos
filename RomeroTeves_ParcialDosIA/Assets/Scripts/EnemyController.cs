@@ -49,19 +49,6 @@ public class EnemyController : MonoBehaviour
     }
 
     //Posible Modificacion
-    //public Vector3 SteeringCalculate(Vector3 Desired)
-    //{
-    //    return Vector3.ClampMagnitude(Desired.normalized * MAXSPEED - _velocity, MAXSPEED);
-    //}
-    //public void MyForce(Vector3 force)
-    //{
-    //    _velocity += force;
-    //    if (_velocity.magnitude >= MAXSPEED)
-    //    {
-    //        _velocity = _velocity.normalized * MAXSPEED;
-    //    }
-    //}
-
     List<Vector3> GetPathBasedOnPFType()//esto hace el A* pero desde el pathfinding
     {
         return _pf.AStar(_start, _goal);
@@ -94,26 +81,6 @@ public class EnemyController : MonoBehaviour
 
         return true;
     }
-
-    ////Intento de A* en el #region
-
-    //#region
-    //void CheckerUpdate()
-    //{
-    //    _path = _pf.BreadthFirstSearch(_start, _goal);
-
-    //    if(_path.Count > 0)
-    //    {
-    //        TravelTo();
-    //    }
-    //}
-
-    //void TravelTo()
-    //{
-    //    Vector3 dir = _path[0] - transform.position;
-    //    transform.position += dir.normalized * _maxSpeed * Time.deltaTime;
-    //}
-    //#endregion
 
     Vector3 GetAngleFromDir(float angleInDegree)
     {
