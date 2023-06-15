@@ -12,7 +12,6 @@ public class Node : MonoBehaviour
     public int Cost { get { return _cost; } }
     //hasta aca
     public LayerMask wallMask;
-
     public List<Node> GetNeighbors()
     {
         if (_neighborNode.Count == 0)

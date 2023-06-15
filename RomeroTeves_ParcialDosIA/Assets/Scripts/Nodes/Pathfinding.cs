@@ -5,43 +5,44 @@ using UnityEngine;
 public class Pathfinding
 {
     public WaitForSeconds time = new WaitForSeconds(0.01f);
-    public List<Vector3> BreadthFirstSearch(Node start, Node goal)
-    {
-        Queue<Node> frontier = new Queue<Node>();
-        frontier.Enqueue(start);
+    //public List<Vector3> BreadthFirstSearch(Node start, Node goal)
+    //{
+    //    Queue<Node> frontier = new Queue<Node>();
+    //    frontier.Enqueue(start);
 
-        Dictionary<Node, Node> cameFrom = new Dictionary<Node, Node>();
-        cameFrom.Add(start, null);
+    //    Dictionary<Node, Node> cameFrom = new Dictionary<Node, Node>();
+    //    cameFrom.Add(start, null);
 
-        Node current = default;
+    //    Node current = default;
 
-        while(frontier.Count != 0)
-        {
-            current = frontier.Dequeue();
+    //    while(frontier.Count != 0)
+    //    {
+    //        current = frontier.Dequeue();
 
-            if (current == goal) break;
+    //        if (current == goal) break;
 
-            foreach (var next in current.GetNeighbors())
-            {
-                if (!cameFrom.ContainsKey(next))
-                {
-                    frontier.Enqueue(next);
-                    cameFrom.Add(next, current);
-                }
-            }
-        }
+    //        //foreach (var next in current.GetNeighbors())
+    //        //{
+    //        //    if (!cameFrom.ContainsKey(next))
+    //        //    {
+    //        //        frontier.Enqueue(next);
+    //        //        cameFrom.Add(next, current);
+    //        //    }
+    //        //}
+    //    }
 
-        List<Vector3> path = new List<Vector3>();
-        if (current != goal) return path;
+    //    List<Vector3> path = new List<Vector3>();
+    //    if (current != goal) return path;
 
-        while(current != null)
-        {
-            path.Add(current.transform.position);
-            current = cameFrom[current];
-        }
-        path.Reverse();
-        return path;
-    }
+    //    while(current != null)
+    //    {
+    //        path.Add(current.transform.position);
+    //        current = cameFrom[current];
+    //    }
+    //    path.Reverse();
+    //    return path;
+    //}
+
     //hay que ver q hacemos con el A* en el foreach
     #region A* 
     //Posible Modificacion

@@ -9,6 +9,9 @@ public class EnemyController : MonoBehaviour
     Vector3 _velocity;
     Pathfinding _pf = new Pathfinding();
     List<Vector3> _path = new List<Vector3>();
+
+    List<Node> _Path = new List<Node>();
+
     Node _start;
     Node _goal;
 
@@ -35,6 +38,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        
         _fsm = new FiniteStateMachine();
         _fsm.AddState(EnemyStates.Patrol, new PatrolState(this));
         _fsm.AddState(EnemyStates.Persuit, new PersuitState(this));
@@ -51,7 +55,24 @@ public class EnemyController : MonoBehaviour
     //Posible Modificacion
     List<Vector3> GetPathBasedOnPFType()//esto hace el A* pero desde el pathfinding
     {
-        return _pf.AStar(_start, _goal);
+        return _pf.AStar(StartNode(), _goal);
+    }
+
+    public Node StartNode()
+    {
+        Node initialNode = null;
+        float shortestDistance = float.MaxValue;
+        foreach (Node node in _Path)
+        {
+            float distance = Vector3.Distance(transform.position, node.transform.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                initialNode = node;
+            }
+        }
+
+        return initialNode;
     }
     //hasta aca de ultima se borra
     public Vector3 Seek(Vector3 targetPos)
@@ -87,6 +108,7 @@ public class EnemyController : MonoBehaviour
         return new Vector3(Mathf.Sin(angleInDegree * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegree * Mathf.Deg2Rad));
     }
 
+
     private void OnDrawGizmos()
     {
         Gizmos.color = enemyNextNodeColor;
@@ -104,18 +126,6 @@ public class EnemyController : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, hitInfo.point);
-        }
-        else
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, patrolNodes[currentPatrolNode].position);
-        }
-
-        Gizmos.color = enemyNextNodeColor;
-
-        foreach (var item in patrolNodes)
-        {
-            Gizmos.DrawWireSphere(patrolNodes[currentPatrolNode].position, nodeRadius);
         }
     }
 }
