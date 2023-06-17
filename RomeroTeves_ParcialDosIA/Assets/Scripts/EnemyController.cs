@@ -10,10 +10,8 @@ public class EnemyController : MonoBehaviour
     Pathfinding _pf = new Pathfinding();
     List<Vector3> _path = new List<Vector3>();
 
-    List<Node> _Path = new List<Node>();
-
-    Node _start;
-    Node _goal;
+    [SerializeField] List<Node> _Path = new List<Node>();
+    [SerializeField]Node _goalNodePatrol;
 
     public bool _persuit;
     public bool _alert;
@@ -35,13 +33,15 @@ public class EnemyController : MonoBehaviour
     public float VIEWANGLE { get => _viewAngle; }
     public float VIEWRANGE { get => _viewRange; }
     public float MAXSPEED { get => _maxSpeed; }
+    public float MAXForce { get => _maxForce; }
 
+
+    public string nameenemy;
     void Start()
     {
-        
         _fsm = new FiniteStateMachine();
-        _fsm.AddState(EnemyStates.Patrol, new PatrolState(this));
-        _fsm.AddState(EnemyStates.Persuit, new PersuitState(this));
+        _fsm.AddState(EnemyStates.Patrol, new PatrolState(this, _path));
+        _fsm.AddState(EnemyStates.Persuit, new PersuitState(this, _path));
         _fsm.AddState(EnemyStates.LookingFor, new LookingForState());
         _fsm.AddState(EnemyStates.Return, new ReturnState());
         _fsm.ChangeState(EnemyStates.Patrol);
@@ -49,15 +49,20 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log("Soy " + nameenemy + " Mi nodo mas cercano es " + StartNode());
+        //Debug.Log("El nodo Mas cercano a player es " + GoalNodePlayer());
         _fsm.Update();
     }
 
     //Posible Modificacion
-    List<Vector3> GetPathBasedOnPFType()//esto hace el A* pero desde el pathfinding
+    public List<Vector3> GetPathBasedOnPFTypePlayer()//esto hace el A* pero desde el pathfinding
     {
-        return _pf.AStar(StartNode(), _goal);
+        return _pf.AStar(StartNode(), GoalNodePlayer());
     }
-
+    public List<Vector3> GetPathBasedOnPFTypePatrol()//esto hace el A* pero desde el pathfinding
+    {
+        return _pf.AStar(StartNode(), _goalNodePatrol);
+    }
     public Node StartNode()
     {
         Node initialNode = null;
@@ -74,6 +79,23 @@ public class EnemyController : MonoBehaviour
 
         return initialNode;
     }
+    public Node GoalNodePlayer()
+    {
+        Node GoalNode = null;
+        float shortestDistance = float.MaxValue;
+        foreach (Node node in _Path)
+        {
+            float distance = Vector3.Distance(player.transform.position, node.transform.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                GoalNode = node;
+            }
+        }
+
+        return GoalNode;
+    }
+
     //hasta aca de ultima se borra
     public Vector3 Seek(Vector3 targetPos)
     {

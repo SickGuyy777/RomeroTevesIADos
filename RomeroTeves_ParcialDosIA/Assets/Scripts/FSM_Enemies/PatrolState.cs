@@ -5,10 +5,11 @@ using UnityEngine;
 public class PatrolState : States
 {
     EnemyController _enemy;
-
-    public PatrolState (EnemyController enemy)
+    List<Vector3> _path = new List<Vector3>();
+    public PatrolState (EnemyController enemy,List<Vector3> Path)
     {
         _enemy = enemy;
+        _path = Path;
     }
 
     public override void OnEnter()
@@ -29,8 +30,22 @@ public class PatrolState : States
         }
         else
         {
-            Debug.Log("No se encontro un Nodo"); //hacer A*
+            _path = _enemy.GetPathBasedOnPFTypePatrol();
+            if (_path?.Count > 0) _path.Reverse();
+            _enemy.GetPathBasedOnPFTypePatrol();
+            if (_path.Count > 0)
+            {
+                TravelPath();
+            }
         }
+    }
+    void TravelPath()
+    {
+        Vector3 target = _path[0] - Vector3.right;
+        Vector3 dir = target - _enemy.transform.position;
+        _enemy.transform.position += dir.normalized * _enemy.MAXSPEED * Time.deltaTime;
+
+        if (Vector3.Distance(target, _enemy.transform.position) <= 0.1f) _path.RemoveAt(0);
     }
 
     void WaypointsMove()

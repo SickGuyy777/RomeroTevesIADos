@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    [SerializeField] List<Node> _neighborNode = new List<Node>();
+    public List<Node> _neighborNode = new List<Node>();
     //posible modificacion
     int _cost = 1;
-    public GraphConection _graph;
-    Coordinates coordenadas;
     public int Cost { get { return _cost; } }
     //hasta aca
     public LayerMask wallMask;
-    public List<Node> GetNeighbors()
-    {
-        if (_neighborNode.Count == 0)
-        {
-            _neighborNode = _graph.GetNeighborsAtPosition(coordenadas.x, coordenadas.y);
-        }
-        return _neighborNode;
-    }
-
     private void OnDrawGizmos()
     {
         foreach (var item in _neighborNode)
@@ -40,15 +29,4 @@ public class Node : MonoBehaviour
 
         }
     }
-}
-struct Coordinates
-{
-    public Coordinates(int X, int Y)
-    {
-        x = X;
-        y = Y;
-    }
-    public int x;
-    public int y;
-
 }

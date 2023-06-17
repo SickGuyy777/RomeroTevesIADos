@@ -6,9 +6,11 @@ public class PersuitState : States
 {
     EnemyController _enemy;
     Vector3 _lastPlayerPos;
-    public PersuitState(EnemyController enemy)
+    List<Vector3> _path = new List<Vector3>();
+    public PersuitState(EnemyController enemy,List<Vector3> waypath)
     {
         _enemy = enemy;
+        _path = waypath;
     }
 
     public override void OnEnter()
@@ -27,37 +29,47 @@ public class PersuitState : States
         }
         else if(_enemy.InFOV(_enemy.player.transform.position))
         {
+            _enemy.transform.position = Vector3.MoveTowards(_enemy.transform.position, _enemy.player.transform.position, _enemy.MAXSPEED * Time.deltaTime);
+            _enemy.transform.forward = _enemy.player.transform.position - _enemy.transform.position;
             foreach (var item in _enemy.Friends)
             {
                 item._alert = true;
             }
-            //_enemy.MyForce(Evade());
-            _enemy.transform.position = Vector3.MoveTowards(_enemy.transform.position, _enemy.player.transform.position, _enemy.MAXSPEED * Time.deltaTime);
-            _enemy.transform.forward = _enemy.player.transform.position - _enemy.transform.position;
+            _path = _enemy.GetPathBasedOnPFTypePlayer();
+            if (_path?.Count > 0) _path.Reverse();
+            _enemy.GetPathBasedOnPFTypePlayer();
+            if (_path.Count > 0)
+            {
+                TravelPath();
+            }
         }
 
         if(_enemy._alert == true)
         {
-            //_enemy.MyForce(Evade());
-            _enemy.transform.position = Vector3.MoveTowards(_enemy.transform.position, _enemy.player.transform.position, _enemy.MAXSPEED * Time.deltaTime);
-            _enemy.transform.forward = _enemy.player.transform.position - _enemy.transform.position;
+            _path = _enemy.GetPathBasedOnPFTypePlayer();
+            if (_path?.Count > 0) _path.Reverse();
+            _enemy.GetPathBasedOnPFTypePlayer();
+            if (_path.Count > 0)
+            {
+                TravelPath();
+                if(!_enemy.InFOV(_enemy.player.transform.position))
+                {
+                    fsm.ChangeState(EnemyStates.Patrol);
+                }
+            }
         }
     }
 
-    //public Vector3 Evade()
-    //{
-    //    Vector3 Desired = Vector3.zero;
-    //    foreach (var player in GameManager.Instance.Player)
-    //    {
-    //        Vector3 DistPl = player.transform.position - _enemy.transform.position;
-    //        if (DistPl.magnitude <= _enemy.VIEWRANGE)
-    //        {
-    //            Vector3 ProxPos = player.transform.position + player.GetMySpeed() * Time.deltaTime;
-    //            Desired = ProxPos - _enemy.transform.position;
-    //        }
-    //    }
-    //    return _enemy.SteeringCalculate(Desired);
-    //}
+    void TravelPath()
+    {
+        Vector3 target = _path[0] - Vector3.right;
+        Vector3 dir = target - _enemy.transform.position;
+        _enemy.transform.position += dir.normalized * _enemy.MAXSPEED * Time.deltaTime;
+
+        if (Vector3.Distance(target, _enemy.transform.position) <= 0.1f) _path.RemoveAt(0);
+    }
+
+
 
     public override void OnExit()
     { }
