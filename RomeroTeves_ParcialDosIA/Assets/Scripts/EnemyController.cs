@@ -5,14 +5,13 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public List<EnemyController> Friends= new List<EnemyController>();
-    FiniteStateMachine _fsm;
+    public FiniteStateMachine _fsm;
     Vector3 _velocity;
     Pathfinding _pf = new Pathfinding();
     List<Vector3> _path = new List<Vector3>();
 
     [SerializeField] List<Node> _Path = new List<Node>();
-    [SerializeField]Node _goalNodePatrol;
-
+    List<Vector3> pathfd=new List<Vector3>();
     public bool _persuit;
     public bool _alert;
     [HideInInspector]
@@ -23,7 +22,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float _viewAngle;
     [SerializeField] float _viewRange;
 
-    public Transform[] patrolNodes;
+    public Node[] patrolNodes;
     public LayerMask wallMask;
     public float nodeRadius;
     public Color enemyNextNodeColor;
@@ -37,21 +36,39 @@ public class EnemyController : MonoBehaviour
 
 
     public string nameenemy;
+    public string vdgfr;
     void Start()
     {
         _fsm = new FiniteStateMachine();
         _fsm.AddState(EnemyStates.Patrol, new PatrolState(this, _path));
         _fsm.AddState(EnemyStates.Persuit, new PersuitState(this, _path));
         _fsm.AddState(EnemyStates.LookingFor, new LookingForState());
-        _fsm.AddState(EnemyStates.Return, new ReturnState());
         _fsm.ChangeState(EnemyStates.Patrol);
     }
 
     private void Update()
     {
+
         //Debug.Log("Soy " + nameenemy + " Mi nodo mas cercano es " + StartNode());
         //Debug.Log("El nodo Mas cercano a player es " + GoalNodePlayer());
-        _fsm.Update();
+        if (!_alert)
+        {
+            _fsm.Update();
+        }
+        else
+        {
+            if (pathfd.Count > 0)
+            {
+                TravelPath(pathfd);
+            }
+            else
+            {
+                pathfd = GetPathBasedOnPFTypePlayer();
+                pathfd.Reverse();
+                
+            }
+        }
+        
     }
 
     //Posible Modificacion
@@ -59,9 +76,9 @@ public class EnemyController : MonoBehaviour
     {
         return _pf.AStar(StartNode(), GoalNodePlayer());
     }
-    public List<Vector3> GetPathBasedOnPFTypePatrol()//esto hace el A* pero desde el pathfinding
+    public List<Vector3> GetPathBasedOnPFTypePatrol()
     {
-        return _pf.AStar(StartNode(), _goalNodePatrol);
+        return _pf.AStar(StartNode(), patrolNodes[currentPatrolNode]);
     }
     public Node StartNode()
     {
@@ -95,7 +112,16 @@ public class EnemyController : MonoBehaviour
 
         return GoalNode;
     }
+    public void TravelPath(List<Vector3> _path)
+    {
+            Vector3 target = _path[0] - Vector3.forward;
+            Vector3 dir = target - transform.position;
+            transform.forward = dir;
+            transform.position += dir.normalized * MAXSPEED * Time.deltaTime;
 
+            if (Vector3.Distance(target, transform.position) <= 0.1f) _path.RemoveAt(0);
+
+    }
     //hasta aca de ultima se borra
     public Vector3 Seek(Vector3 targetPos)
     {
@@ -142,7 +168,7 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + dirA.normalized * _viewRange);
         Gizmos.DrawLine(transform.position, transform.position + dirB.normalized * _viewRange);
 
-        Vector3 dir = patrolNodes[currentPatrolNode].position - transform.position;
+        Vector3 dir = patrolNodes[currentPatrolNode].transform.position - transform.position;
 
         if (Physics.Raycast(transform.position, dir, out RaycastHit hitInfo, dir.magnitude, wallMask))
         {

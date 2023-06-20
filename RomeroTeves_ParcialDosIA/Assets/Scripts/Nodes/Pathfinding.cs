@@ -48,17 +48,18 @@ public class Pathfinding
         List<Vector3> path = new List<Vector3>();
         if (current != goal) return path;
 
-        while (current != start)
+        while (current != null  /*antes era start*/)
         {
             path.Add(current.transform.position);
             current = cameFrom[current];
         }
+        path.Add(start.transform.position);
         return path;
     }
     #endregion
     float Heuristic(Vector3 start, Vector3 end)
     {
-        return Vector3.Distance(start, end);
+        return Mathf.Abs(end.x - start.x) + Mathf.Abs(end.y - start.y);
     }
     //hasta aca
 }

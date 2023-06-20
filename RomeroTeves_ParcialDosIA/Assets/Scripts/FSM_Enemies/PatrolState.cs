@@ -24,28 +24,22 @@ public class PatrolState : States
             _enemy._persuit = true;
             fsm.ChangeState(EnemyStates.Persuit);
         }
-        else if (_enemy.InLOS(_enemy.transform.position, _enemy.patrolNodes[_enemy.currentPatrolNode].position))
+        else if (_enemy.InLOS(_enemy.transform.position, _enemy.patrolNodes[_enemy.currentPatrolNode].transform.position))
         {
             WaypointsMove();
         }
         else
         {
-            _path = _enemy.GetPathBasedOnPFTypePatrol();
-            if (_path?.Count > 0) _path.Reverse();
-            _enemy.GetPathBasedOnPFTypePatrol();
-            if (_path.Count > 0)
+            if(_path.Count>0)
             {
-                TravelPath();
+                _enemy.TravelPath(_path);
+            }
+            else
+            {
+                _path = _enemy.GetPathBasedOnPFTypePatrol();
+                if (_path?.Count > 0) _path.Reverse();
             }
         }
-    }
-    void TravelPath()
-    {
-        Vector3 target = _path[0] - Vector3.right;
-        Vector3 dir = target - _enemy.transform.position;
-        _enemy.transform.position += dir.normalized * _enemy.MAXSPEED * Time.deltaTime;
-
-        if (Vector3.Distance(target, _enemy.transform.position) <= 0.1f) _path.RemoveAt(0);
     }
 
     void WaypointsMove()
@@ -54,8 +48,8 @@ public class PatrolState : States
         {
             item._alert = false;
         }
-        _enemy.AddForce(_enemy.Seek(_enemy.patrolNodes[_enemy.currentPatrolNode].position));
-        if (Vector3.Distance(_enemy.patrolNodes[_enemy.currentPatrolNode].position, _enemy.transform.position) <= _enemy.nodeRadius)
+        _enemy.AddForce(_enemy.Seek(_enemy.patrolNodes[_enemy.currentPatrolNode].transform.position));
+        if (Vector3.Distance(_enemy.patrolNodes[_enemy.currentPatrolNode].transform.position, _enemy.transform.position) <= _enemy.nodeRadius)
             _enemy.currentPatrolNode++;
 
         if (_enemy.currentPatrolNode >= _enemy.patrolNodes.Length)
